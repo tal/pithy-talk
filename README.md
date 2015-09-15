@@ -16,15 +16,15 @@ to each username. So each user triggering can only get it once every 2 hours.
 Next you add in some phrases for it to say back.
 
 ```js
-rule.respondWith("woah, that's a long branch name, did @paul write it?");
+rule.remark("woah, that's a long branch name, did @paul write it?");
 ```
 
 If you add multiple phrases it'll randomly pick one to respond with.
 
 ```js
-rule.respondWith((pr, callerMsg) =>
+rule.remark((pr, callerMsg) => {
   return `@${callerMsg.userName} are you sure you want such a long pull request message?`;
-)
+})
 ```
 
 To actually run the test you do
